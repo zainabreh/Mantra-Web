@@ -79,16 +79,16 @@ left: 11%;
 }
 .count{
   background-color: red;
-  white-space: nowrap;
+  color: white;
   line-height: 18px;
-  text-align: center;
-  padding-inline: 6px;
+  white-space: nowrap;
   position: relative;
-  border-radius: 50%;
-  font-size: 12px;
-  color: wheat;
   top: -15px;
   left: -16px;
+  text-align: center;
+  padding-inline: 6px;
+  border-radius: 50%;
+  font-size: 14px;
   font-weight: 700;
   cursor: pointer;
 }

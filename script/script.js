@@ -2,28 +2,25 @@ let hamicon = document.querySelector(".hamburger");
 let navLinks = document.querySelector(".nav_links");
 let count = document.querySelector(".count");
 let itemsContainer = document.querySelector(".items-container");
-
+let cartItem;
+onload();
 hamicon.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
-let cartItem;
-let bagItemstr =localStorage.getItem('cartItem')
-cartItem = bagItemstr ? JSON.parse(bagItemstr) : [];
+function onload(){
+    let bagItemstr =localStorage.getItem('cartItem')
+    cartItem = bagItemstr ? JSON.parse(bagItemstr) : [];
+    count.innerText = cartItem.length;
+}
+
+// localStorage.removeItem(cartItem)
 
 function addTocart(id){
     cartItem.push(id);
     localStorage.setItem('cartItem',JSON.stringify(cartItem))
-    updateCartCount();
+    count.innerText = cartItem.length;
 }
 
-let updateCartCount = ()=>{
-    if(cartItem.length > 0){
-        count.style.visibility = 'visible';
-        count.innerText = cartItem.length;
-    }else{
-        count.style.visibility = 'hidden';
-    }
-}
 let item_Collection = '';
 
 items.forEach(item=>{
