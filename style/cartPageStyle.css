@@ -1,14 +1,25 @@
 .cart-items-container{
     display: flex;
-    align-items: center;
     justify-content: space-evenly;
     width: 80%;
     margin: 40px 10%;
     flex-wrap: wrap;
 }
-
-.itemCard{
+.fa-xmark{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    text-align: right;
+    cursor: pointer;
+}
+.itemCards{
     width: 40%;
+
+}
+.itemCard{
+    position: relative;
+    margin-bottom: 10px;
     box-shadow: 2px 2px 2px 2px gainsboro;
 }
 
@@ -48,6 +59,7 @@
 
 .summary{
     width: 30%;
+    height: 250px;
     box-shadow: 2px 2px 2px 2px gainsboro;
     padding: 20px;
 }
@@ -98,6 +110,7 @@
     font-weight: 700;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 20px;
 }
 .order-btn:hover{
     background-color: rgb(40, 135, 40);

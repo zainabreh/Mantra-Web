@@ -4,6 +4,7 @@ let count = document.querySelector(".count");
 let itemsContainer = document.querySelector(".items-container");
 let cartItem;
 onload();
+
 hamicon.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
@@ -13,7 +14,7 @@ function onload(){
     count.innerText = cartItem.length;
 }
 
-// localStorage.removeItem(cartItem)
+// localStorage.clear()
 
 function addTocart(id){
     cartItem.push(id);
@@ -22,31 +23,32 @@ function addTocart(id){
 }
 
 let item_Collection = '';
-
 items.forEach(item=>{
     item_Collection += `<div class="item-container">
     <img src="${item.image}" alt="product-picture" class="prod-image"/>
     
     <div class="ratings">
-        ${item.rating.stars} ⭐ | ${item.rating.count}
+    ${item.rating.stars} ⭐ | ${item.rating.count}
     </div>
     
     <div class="company-name">
-        ${item.company}
+    ${item.company}
     </div>
     
     <div class="item-name">
-        ${item.item_name}
+    ${item.item_name}
     </div>
     
     <div class="price">
-        <span class="curr-price">RS ${item.current_price}</span>
-        <span class="org-price">RS ${item.original_price}</span>
-        <span class="discount">(${item.discount_percentage}% OFF)</span>
+    <span class="curr-price">RS ${item.current_price}</span>
+    <span class="org-price">RS ${item.original_price}</span>
+    <span class="discount">(${item.discount_percentage}% OFF)</span>
     </div>
     
     <button class="add-btn" onclick="addTocart(${item.id})">Add to Cart</button>
     
     </div>`;
 })
-itemsContainer.innerHTML = item_Collection;
+if(itemsContainer){
+    itemsContainer.innerHTML = item_Collection;
+}
