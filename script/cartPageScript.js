@@ -8,25 +8,18 @@ function onload() {
   displayData();
 }
 
-// function gettingData() {
-//   gettingItemData = cartItem.map((item) => {
-//     for (let i = 0; i < items.length; i++) {
-//         if (item == items[i].id) {
-//           console.log(items[i])
-//         return items[i];
-//       }
-//     }
-//   });
-// //   console.log(gettingItemData);
-// }
-
 function gettingData() {
-    gettingItemData = cartItem.map(itemId => {
-      const foundItem = items.find(item => item.id == itemId);
-      return foundItem;
-    });
-    displayData();
-  }
+  gettingItemData = cartItem.map((item) => {
+    for (let i = 0; i < items.length; i++) {
+        if (item == items[i].id) {
+          console.log(items[i])
+        return items[i];
+      }
+    }
+  });
+//   console.log(gettingItemData);
+}
+
 
 function displayData() {
   let itemCards = document.querySelector(".itemCards");
