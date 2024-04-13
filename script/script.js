@@ -2,7 +2,7 @@ let hamicon = document.querySelector(".hamburger");
 let navLinks = document.querySelector(".nav_links");
 let count = document.querySelector(".count");
 let itemsContainer = document.querySelector(".items-container");
-let cartItem;
+let cartItem = [];
 onload();
 
 hamicon.addEventListener("click", () => {

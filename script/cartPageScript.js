@@ -1,6 +1,6 @@
 
 const ConvenienceFee = 99;
-let gettingItemData = '';
+let gettingItemData;
 onload();
 function onload() {
   gettingData();
@@ -9,46 +9,45 @@ function onload() {
 }
 
 function gettingData() {
+  console.log(cartItem);
   gettingItemData = cartItem.map((item) => {
     for (let i = 0; i < items.length; i++) {
-        if (item == items[i].id) {
-          console.log(items[i])
+      if (item == items[i].id) {
         return items[i];
       }
     }
   });
-//   console.log(gettingItemData);
+  console.log(gettingItemData);
 }
-
 
 function displayData() {
   let itemCards = document.querySelector(".itemCards");
-
+  
   let gettingHtml = "";
   gettingItemData.forEach((item) => {
     gettingHtml += generateItemHTML(item);
   });
-
-  itemCards.innerHTML += gettingHtml;
+  
+  itemCards.innerHTML = gettingHtml;
 }
 
 function deleteItem(itemid) {
-  cartItem = cartItem.filter(item => item != itemid);
+  cartItem = cartItem.filter(item => item !== itemid);
   localStorage.setItem("cartItem", JSON.stringify(cartItem));
   gettingData();
-  displayData();
   count.innerText = cartItem.length;
   calculateSummary();
+  displayData();
 }
 
 function generateItemHTML(itemid) {
   return `
     <div class="itemCard">
             <div class="delete">
-                <i class="fa-solid fa-xmark" onclick="deleteItem(${itemid.id})">x</i>
+                <i class="fa-solid fa-xmark" onclick="deleteItem(${itemid.id})"></i>
             </div>
             <div class="image">
-                <img src="/${itemid.image}" alt="product-image" class="prod-cart-image">
+                <img src="../${itemid.image}" alt="product-image" class="prod-cart-image">
             </div>
 
             <div class="itemDetail">
