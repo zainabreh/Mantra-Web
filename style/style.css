@@ -5,6 +5,7 @@
 }
 a{
   text-decoration: none;
+  color: black;
 }
 .nav {
   width: 100vw;
@@ -69,6 +70,7 @@ left: 11%;
 }
 .cart_icons .icon {
   padding: 10px;
+  position: relative;
 }
 .cart_icons .icon > p {
   font-size: 0.7rem;
@@ -76,17 +78,14 @@ left: 11%;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-.fa-cart-shopping{
-  position: relative;
-}
 .count{
   background-color: red;
   color: white;
   line-height: 18px;
   white-space: nowrap;
-  position: relative;
-  top: -15px;
-  left: -16px;
+  position: absolute;
+  top: 0;
+  right: 0;
   text-align: center;
   padding-inline: 6px;
   border-radius: 50%;
@@ -223,7 +222,7 @@ left: 11%;
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-@media only screen and (max-width: 867px) {
+@media only screen and ((min-width: 390px) and (max-width: 865px)) {
   .nav {
     z-index: 1;
     text-align: center;
@@ -257,8 +256,9 @@ left: 11%;
     top: 30%;
   left: 12.5%;
   }
+ 
 }
-@media only screen and (max-width: 380px){
+ @media only screen and (max-width: 280px){
 
   .hamburger{
     font-size: 15px;
@@ -288,5 +288,7 @@ left: 11%;
     top: 30%;
   left: 11%;
   }
-
-}
+  .footer_container{
+    flex-direction: column;
+  }
+} 

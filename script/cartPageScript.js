@@ -9,38 +9,46 @@ function onload() {
 }
 
 function gettingData() {
-  console.log(cartItem);
+ 
   gettingItemData = cartItem.map((item) => {
+    
     for (let i = 0; i < items.length; i++) {
       if (item == items[i].id) {
         return items[i];
       }
     }
-  });
-  console.log(gettingItemData);
+  });  
+  
 }
 
 function displayData() {
   let itemCards = document.querySelector(".itemCards");
-  
+ 
   let gettingHtml = "";
-  gettingItemData.forEach((item) => {
-    gettingHtml += generateItemHTML(item);
-  });
-  
+  if (!gettingItemData || gettingItemData.length === 0){
+    gettingHtml = `<h1 class='no-msg'>No Items Ordered</h1>`;
+  }else{
+    gettingItemData.forEach((item) => {
+      gettingHtml += generateItemHTML(item);
+    });
+  }
   itemCards.innerHTML = gettingHtml;
+ 
 }
 
 function deleteItem(itemid) {
+  
   cartItem = cartItem.filter(item => item !== itemid);
   localStorage.setItem("cartItem", JSON.stringify(cartItem));
   gettingData();
   count.innerText = cartItem.length;
   calculateSummary();
   displayData();
+  
 }
 
 function generateItemHTML(itemid) {
+ 
   return `
     <div class="itemCard">
             <div class="delete">
@@ -78,6 +86,7 @@ function generateItemHTML(itemid) {
 
         </div>
     `;
+    
 }
 
 function calculateSummary() {
