@@ -221,8 +221,12 @@ left: 11%;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-
-@media only screen and ((min-width: 390px) and (max-width: 865px)) {
+@media only screen and ( max-width: 867px){
+  .hamburger{
+    display: none;
+  }
+} 
+@media only screen and ( max-width: 865px) {
   .nav {
     z-index: 1;
     text-align: center;
@@ -271,7 +275,10 @@ left: 11%;
     padding: 5px;
   }
   .cart_icons .icon > p {
-    font-size: 0.4rem;
+    font-size: 8px;
+  }
+  .cartTxt{
+    font-size: 8px;
   }
   .cart_icons .icon .fa-user,.fa-cart-shopping,.fa-heart{
     font-size: 10px;

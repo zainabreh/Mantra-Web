@@ -130,7 +130,7 @@
     background-color: rgb(40, 135, 40);
 }
 
-@media only screen and ((min-width: 390px) and (max-width: 865px)) {
+@media only screen and (max-width: 865px) {
     .cart-items-container{
         flex-direction: column;
         align-items: center;
@@ -142,3 +142,19 @@
         width: 100%;
     }
 }
+
+@media only screen and (max-width: 280px){
+    .summary{
+        width: 100%;
+    }
+    .itemDetail{
+        width: 100%;
+    }
+    
+}
+
+@media only screen and ( max-width: 867px){
+    .hamburger{
+      display: none;
+    }
+  }
